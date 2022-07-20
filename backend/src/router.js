@@ -25,11 +25,12 @@ router.put("/tools/:id", ToolController.edit);
 router.post("/tools", ToolController.add);
 router.delete("/tools/:id", ToolController.delete);
 
-router.get("/project_tools", ProjectToolController.browse);
-router.get("/project_tools/:id", ProjectToolController.read);
-router.post("/project_tools", ProjectToolController.add);
+router.get("/project_tool", ProjectToolController.browse);
+router.get("/project_tool/tools/:id", ProjectToolController.readByToolId);
+router.get("/project_tool/projects/:id", ProjectToolController.readByProjectId);
+router.post("/project_tool", ProjectToolController.add);
 router.delete(
-  "/projects/:project_id/tools/:tool_id",
+  "/project_tool/projects/:project_id/tools/:tool_id",
   ProjectToolController.delete
 );
 
