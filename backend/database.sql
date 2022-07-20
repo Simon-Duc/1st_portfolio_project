@@ -116,7 +116,8 @@ ALTER TABLE `project`
 CREATE TABLE `tool` (
   `id` int(11) UNSIGNED NOT NULL,
   `name` varchar(80) NOT NULL,
-  `img_url` varchar(255) NOT NULL
+  `img_url` varchar(255),
+  `category` varchar(80)
   
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -124,9 +125,9 @@ CREATE TABLE `tool` (
 -- Contenu de la table `tool`
 --
 
-INSERT INTO `tool` (`id`, `name`, `img_url`) VALUES
-(1, 'React', 'https://loremflickr.com/320/240'),
-(2, 'HTML', 'https://loremflickr.com/320/240');
+INSERT INTO `tool` (`id`, `name`, `img_url`, `category`) VALUES
+(1, 'React', 'https://loremflickr.com/320/240', 'framework'),
+(2, 'HTML', 'https://loremflickr.com/320/240', 'markup language');
 
 
 --
