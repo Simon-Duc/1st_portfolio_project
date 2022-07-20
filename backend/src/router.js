@@ -3,6 +3,7 @@ const express = require("express");
 const { ProjectController } = require("./controllers");
 const { ClientController } = require("./controllers");
 const { ToolController } = require("./controllers");
+const { ProjectToolController } = require("./controllers");
 
 const router = express.Router();
 
@@ -23,5 +24,14 @@ router.get("/tools/:id", ToolController.read);
 router.put("/tools/:id", ToolController.edit);
 router.post("/tools", ToolController.add);
 router.delete("/tools/:id", ToolController.delete);
+
+router.get("/project_tool", ProjectToolController.browse);
+router.get("/project_tool/tools/:id", ProjectToolController.readByToolId);
+router.get("/project_tool/projects/:id", ProjectToolController.readByProjectId);
+router.post("/project_tool", ProjectToolController.add);
+router.delete(
+  "/project_tool/projects/:project_id/tools/:tool_id",
+  ProjectToolController.delete
+);
 
 module.exports = router;
