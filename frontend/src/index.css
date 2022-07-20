@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Neue Montreal";
+  src: url(./assets/NeueMontreal-Regular.otf);
+}
+
+body {
+  font-family: "Neue Montreal", sans-serif;
+  line-height: 1.5;
+}
