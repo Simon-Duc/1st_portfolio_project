@@ -1,7 +1,7 @@
 {
   "name": "template-fullstack",
   "version": "1.0.0",
-  "description": "",
+  "description": "This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School. It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying as simple as possible to use.",
   "main": "index.js",
   "scripts": {
     "setup": "npm i && husky install && npm --prefix ./frontend i && npm --prefix ./backend i",
@@ -18,5 +18,13 @@
   "devDependencies": {
     "concurrently": "^7.0.0",
     "husky": "^7.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Simon-Duc/1st_portfolio_project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Simon-Duc/1st_portfolio_project/issues"
+  },
+  "homepage": "https://github.com/Simon-Duc/1st_portfolio_project#readme"
 }
