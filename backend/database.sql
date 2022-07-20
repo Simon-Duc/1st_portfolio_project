@@ -17,36 +17,37 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `simple-mvc`
+-- Base de données :  `portfolio_db`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `item`
+-- Structure de la table `client`
 --
 
-CREATE TABLE `item` (
+CREATE TABLE `client` (
   `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL
+  `name` varchar(80) NOT NULL
+  
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `item`
+-- Contenu de la table `client`
 --
 
-INSERT INTO `item` (`id`, `title`) VALUES
-(1, 'Stuff'),
-(2, 'Doodads');
+INSERT INTO `client` (`id`, `name`) VALUES
+(1, 'Wild Code School'),
+(2, 'Shop Around Me');
 
 --
 -- Index pour les tables exportées
 --
 
 --
--- Index pour la table `item`
+-- Index pour la table `client`
 --
-ALTER TABLE `item`
+ALTER TABLE `client`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -54,10 +55,126 @@ ALTER TABLE `item`
 --
 
 --
--- AUTO_INCREMENT pour la table `item`
+-- AUTO_INCREMENT pour la table `client`
 --
-ALTER TABLE `item`
+ALTER TABLE `client`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `project`
+--
+
+CREATE TABLE `project` (
+  `id` int(11) PRIMARY KEY NOT NULL,
+  `name` varchar(80) NOT NULL,
+  `description` varchar(280) NOT NULL,
+  `start_date` date NOT NULL,
+  `end_date` date NOT NULL,
+  `img_url` varchar(255) NOT NULL,
+  `developer_team` varchar(80) NOT NULL,
+  `linkedin_post_link` varchar(255),
+  `github_repo_link` varchar(255),
+  `client_id` int(11),
+      FOREIGN KEY (client_id)
+      REFERENCES client(id)
+  
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `project`
+--
+
+INSERT INTO `project` (`id`, `name`, `description`, `start_date`, `end_date`, `img_url`, `developer_team`, `linkedin_post_link`, `github_repo_link`, `client_id`) VALUES
+(1, 'Project 1', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus distinctio odit ipsa cum rerum a sapiente obcaecati itaque natus magnam?', '2022-02-28', '2022-07-29', 'https://loremflickr.com/320/240', 'Developer team 1', 'https://www.linkedin.com/in/simon-duc-858481213/', 'https://github.com/Simon-Duc/1st_portfolio_project', 1),
+(2, 'Project 2', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus distinctio odit ipsa cum rerum a sapiente obcaecati itaque natus magnam?', '2022-05-01', '2022-06-15', 'https://loremflickr.com/320/240', 'Developer team 2', 'https://www.linkedin.com/in/simon-duc-858481213/', 'https://github.com/Simon-Duc/1st_portfolio_project', 2);
+
+--
+-- AUTO_INCREMENT pour les tables exportées
+--
+
+--
+-- AUTO_INCREMENT pour la table `project`
+--
+ALTER TABLE `project`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `tool`
+--
+
+CREATE TABLE `tool` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `name` varchar(80) NOT NULL,
+  `img_url` varchar(255) NOT NULL
+  
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `tool`
+--
+
+INSERT INTO `tool` (`id`, `name`, `img_url`) VALUES
+(1, 'React', 'https://loremflickr.com/320/240'),
+(2, 'HTML', 'https://loremflickr.com/320/240');
+
+
+--
+-- Index pour les tables exportées
+--
+
+--
+-- Index pour la table `tool`
+--
+ALTER TABLE `tool`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables exportées
+--
+
+--
+-- AUTO_INCREMENT pour la table `tool`
+--
+ALTER TABLE `tool`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `project_tool`
+--
+
+CREATE TABLE `project_tool` (
+  `project_id` int(11) UNSIGNED NOT NULL,
+  CONSTRAINT fk_project_tool_project
+        FOREIGN KEY (project_id)
+        REFERENCES project(id),
+  `tool_id` int(11) UNSIGNED NOT NULL,
+  CONSTRAINT fk_project_tool_tool
+        FOREIGN KEY (tool_id)
+        REFERENCES tool(id)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `project_tool`
+--
+
+INSERT INTO `project_tool` (`project_id`,`tool_id`) VALUES
+(1, 1),
+(2, 1),
+(2, 2);
+
