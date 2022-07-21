@@ -10,7 +10,7 @@ export default function Projects() {
       .get(
         `${
           import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
-        }/projects`
+        }/projects/admin`
       )
       .then((response) => {
         setProjects(response.data);
