@@ -1,4 +1,5 @@
 import { useModal } from "react-hooks-use-modal";
+import PropTypes from "prop-types";
 import ProjectModal from "./ProjectModal";
 
 export default function Project({ project }) {
@@ -20,3 +21,18 @@ export default function Project({ project }) {
     </figure>
   );
 }
+
+Project.propTypes = {
+  project: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    start_date: PropTypes.string.isRequired,
+    end_date: PropTypes.string.isRequired,
+    developer_team: PropTypes.string.isRequired,
+    img_url: PropTypes.string.isRequired,
+    linkedin_post_link: PropTypes.string.isRequired,
+    github_repo_link: PropTypes.string.isRequired,
+    client_id: PropTypes.number.isRequired,
+  }).isRequired,
+};
