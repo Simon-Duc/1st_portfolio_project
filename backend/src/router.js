@@ -8,7 +8,9 @@ const { ProjectToolController } = require("./controllers");
 const router = express.Router();
 
 router.get("/projects", ProjectController.browse);
+router.get("/projects/admin", ProjectController.browseWithClientId);
 router.get("/projects/:id", ProjectController.read);
+router.get("/projects/admin/:id", ProjectController.readWithClientId);
 router.put("/projects/:id", ProjectController.edit);
 router.post("/projects", ProjectController.add);
 router.delete("/projects/:id", ProjectController.delete);
