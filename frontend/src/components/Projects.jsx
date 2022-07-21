@@ -1,37 +1,46 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 
 export default function Projects() {
+  const [projects, setProjects] = useState([]);
+
+  const getProjects = () => {
+    axios
+      .get(
+        `${
+          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+        }/projects`
+      )
+      .then((response) => {
+        setProjects(response.data);
+      });
+  };
+
+  useEffect(() => {
+    getProjects();
+  }, []);
+
   return (
     <div id="projects">
       <Navbar />
-      <section className="h-[90vh] flex flex-col justify-center items-center">
+      <section className="flex flex-col justify-center items-center">
         <h2 className="text-xl m-4">Projects</h2>
-        <figure className="flex flex-col w-[90%] border border-1 p-2 mb-4">
-          <h3 className="p-2">Project 1</h3>
-          <img
-            className="p-2 w-auto"
-            src="https://loremflickr.com/320/160"
-            alt="Project 1"
-          />
-          <figcaption className="p-2">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia,
-            voluptas! Repudiandae facere alias nihil? Reiciendis esse sapiente
-            nihil quaerat. Modi.
-          </figcaption>
-        </figure>
-        <figure className="flex flex-col w-[90%] border border-1 p-2">
-          <h3 className="p-2">Project 2</h3>
-          <img
-            className="p-2"
-            src="https://loremflickr.com/320/160"
-            alt="Project 1"
-          />
-          <figcaption className="p-2">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Officia,
-            voluptas! Repudiandae facere alias nihil? Reiciendis esse sapiente
-            nihil quaerat. Modi.
-          </figcaption>
-        </figure>
+        {projects &&
+          projects.map((project) => (
+            <figure
+              key={project.id}
+              className="flex flex-col w-[90%] border border-1 p-2 mb-4"
+            >
+              <h3 className="p-2">{project.name}</h3>
+              <img
+                className="p-2 w-auto"
+                src={project.img_url}
+                alt={project.name}
+              />
+              <figcaption className="p-2">{project.description}</figcaption>
+            </figure>
+          ))}
       </section>
       <section className="h-[5vh] flex flex-col justify-center items-center">
         <a href="#contact">

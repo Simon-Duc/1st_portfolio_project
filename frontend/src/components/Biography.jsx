@@ -6,7 +6,7 @@ export default function Biography() {
       <Navbar />
       <section className="h-[90vh] flex flex-col justify-center items-center">
         <h2 className="text-xl m-4">Bio</h2>
-        <div className="flex flex-col items-center  border-solid border-1 w-[90%] p-4">
+        <div className="flex flex-col items-center border border-solid border-1 w-[90%] p-4">
           <img
             src="../src/assets/photo.jpg"
             alt="Profile pic"
