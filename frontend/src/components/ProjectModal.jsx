@@ -33,21 +33,24 @@ export default function ProjectModal({ project, close }) {
         <img className="p-2 w-auto" src={project.img_url} alt={project.name} />
         <figcaption className="p-2">{project.description}</figcaption>
         <ul>
-          <li className="p-2">{project.start_date}</li>
-          <li className="p-2">{project.end_date}</li>
-          <li className="p-2">{project.developer_team}</li>
-          <a href={project.linkedin_post_link}>
-            <li className="p-2 w-8">
-              <img src="../src/assets/logo_linkedin.png" alt="LinkedIn" />
-            </li>
-          </a>
-          <a href={project.github_repo_link}>
-            <li className="p-2 w-8">
-              <img src="../src/assets/logo_github.png" alt="GitHub" />
-            </li>
-          </a>
+          <li className="p-2">
+            Du {project.start_date} au {project.end_date}
+          </li>
+          <li className="p-2">Developer team : {project.developer_team}</li>
+          <div className="flex">
+            <a href={project.linkedin_post_link}>
+              <li className="p-2 w-8">
+                <img src="../src/assets/logo_linkedin.png" alt="LinkedIn" />
+              </li>
+            </a>
+            <a href={project.github_repo_link}>
+              <li className="p-2 w-8">
+                <img src="../src/assets/logo_github.png" alt="GitHub" />
+              </li>
+            </a>
+          </div>
           <li className="p-2">{project.client_name}</li>
-          <ul className="flex">
+          <ul className="flex flex-wrap">
             <li className="p-2">Tools :</li>
             {tools &&
               tools.map((tool) => (
