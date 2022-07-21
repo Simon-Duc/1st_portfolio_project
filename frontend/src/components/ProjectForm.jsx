@@ -57,7 +57,15 @@ export default function ProjectForm({ project }) {
       .then((response) => response);
   };
 
-  const deleteProject = () => {};
+  const deleteProject = () => {
+    axios
+      .delete(
+        `${
+          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+        }/projects/${project.id}`
+      )
+      .then((response) => response);
+  };
 
   const handleSave = (e) => {
     e.preventDefault();
@@ -216,7 +224,7 @@ export default function ProjectForm({ project }) {
         <section className="flex justify-center text-center w-full">
           <input
             type="submit"
-            value="Valider"
+            value="Save"
             className="text-center border-solid border-2 border-green-900 text-green-900 p-2 m-2 min-w-[42%] rounded-lg"
           />
           <button
@@ -224,16 +232,16 @@ export default function ProjectForm({ project }) {
             className="border-solid border-2 border-[#5f2525] text-[#5f2525] p-2 m-2 min-w-[42%] rounded-lg"
             onClick={handleDelete}
           >
-            Supprimer
+            Delete
           </button>
         </section>
       ) : (
         <button
           type="button"
-          className="border-solid border-2 border-[#5f2525] text-[#5f2525] p-2 m-2 w-[90%] rounded-lg"
+          className="border-solid border-2 border-black p-2 m-2 w-[90%] rounded-lg"
           onClick={handleEdit}
         >
-          Modifier les informations
+          Update
         </button>
       )}
     </form>
