@@ -1,6 +1,24 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
 import Navbar from "./Navbar";
 
 export default function Biography() {
+  const [tools, setTools] = useState([]);
+
+  const getTools = () => {
+    axios
+      .get(
+        `${import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"}/tools`
+      )
+      .then((response) => {
+        setTools(response.data);
+      });
+  };
+
+  useEffect(() => {
+    getTools();
+  }, []);
+
   return (
     <div id="biography">
       <Navbar />
@@ -27,12 +45,16 @@ export default function Biography() {
             inventore sint ex dolorum aliquid?
           </p>
           <h3>Tools</h3>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            laudantium iste culpa sunt enim ad quia consequatur mollitia dolore,
-            minus perferendis, assumenda aperiam, praesentium asperiores
-            inventore sint ex dolorum aliquid?
-          </p>
+          <ul className="flex flex-wrap p-2">
+            {tools &&
+              tools.map((tool) => {
+                return (
+                  <li className="m-1 p-1 border border-1" key={tool.id}>
+                    {tool.name}
+                  </li>
+                );
+              })}
+          </ul>
         </div>
       </section>
       <section className="h-[5vh] flex flex-col justify-center items-center">
