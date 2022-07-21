@@ -3,7 +3,7 @@ export default function Contact() {
     <div>
       <section
         id="contact"
-        className="h-[100vh] flex flex-col justify-center items-center"
+        className="h-[95vh] flex flex-col justify-center items-center"
       >
         <h2 className="mb-4">Contact</h2>
         <form className="flex flex-col border border-solid border-1 p-4 min-w-[90%]">
@@ -31,6 +31,11 @@ export default function Contact() {
             className="border border-solid border-1 mt-2 min-h-[8rem] p-2"
           />
         </form>
+      </section>
+      <section className="h-[5vh] flex flex-col justify-center items-center">
+        <a href="#welcome">
+          <img src="../src/assets/chevron2.png" alt="Chevron" className="w-6" />
+        </a>
       </section>
     </div>
   );
