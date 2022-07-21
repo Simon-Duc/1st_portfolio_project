@@ -28,7 +28,7 @@ export default function Projects() {
   };
 
   return (
-    <div className="flex flex-col items-center m-4">
+    <div className="flex flex-col items-center m-2">
       <label htmlFor="project-select" className="text-xl">
         Select the project :
         <select
