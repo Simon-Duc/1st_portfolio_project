@@ -54,12 +54,15 @@ export default function ProjectModal({
             </li>
           </a>
           <li className="p-2">{clientName}</li>
-          {tools &&
-            tools.map((tool) => (
-              <li key={tool.tool_id} className="p-2">
-                {tool.name}
-              </li>
-            ))}
+          <ul className="flex">
+            <li className="p-2">Tools :</li>
+            {tools &&
+              tools.map((tool) => (
+                <li key={tool.tool_id} className="m-1 p-1 border border-1">
+                  {tool.name}
+                </li>
+              ))}
+          </ul>
         </ul>
         <button className="p-2" type="button" onClick={close}>
           X
