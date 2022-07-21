@@ -1,6 +1,6 @@
 export default function Welcome() {
   return (
-    <div id="welcome" className="border border-solid border-t-1">
+    <div id="welcome">
       <section className="h-[90vh] flex justify-center items-center">
         <div className="flex flex-col items-center">
           <h1 className="text-3xl">🏁</h1>
@@ -25,7 +25,7 @@ export default function Welcome() {
       </section>
       <section className="h-[10vh] flex flex-col justify-center items-center">
         <h3>See more</h3>
-        <a href="#bio">
+        <a href="#biography">
           <img src="../src/assets/chevron.png" alt="Chevron" className="w-6" />
         </a>
       </section>
