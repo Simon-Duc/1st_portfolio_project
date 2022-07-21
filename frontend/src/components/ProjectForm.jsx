@@ -12,7 +12,7 @@ export default function ProjectForm({ project }) {
   const developerTeam = useRef();
   const linkedinPostLink = useRef();
   const githubRepoLink = useRef();
-  const clientName = useRef();
+  const clientId = useRef();
   const imgUrl = useRef();
 
   const putProject = () => {
@@ -30,6 +30,28 @@ export default function ProjectForm({ project }) {
           img_url: imgUrl.current.value,
           linkedin_post_link: linkedinPostLink.current.value,
           github_repo_link: githubRepoLink.current.value,
+          client_id: clientId.current.value,
+        }
+      )
+      .then((response) => response);
+  };
+
+  const postProject = () => {
+    axios
+      .post(
+        `${
+          import.meta.env.VITE_BACKEND_URL ?? "http://localhost:5000"
+        }/projects`,
+        {
+          name: name.current.value,
+          description: description.current.value,
+          start_date: startDate.current.value,
+          end_date: endDate.current.value,
+          developer_team: developerTeam.current.value,
+          img_url: imgUrl.current.value,
+          linkedin_post_link: linkedinPostLink.current.value,
+          github_repo_link: githubRepoLink.current.value,
+          client_id: clientId.current.value,
         }
       )
       .then((response) => response);
@@ -38,7 +60,11 @@ export default function ProjectForm({ project }) {
   const handleSave = (e) => {
     e.preventDefault();
     setEditedUser(false);
-    putProject();
+    if (project) {
+      putProject();
+    } else {
+      postProject();
+    }
   };
 
   const handleEdit = (e) => {
@@ -164,48 +190,36 @@ export default function ProjectForm({ project }) {
         }
         ref={githubRepoLink}
       />
-      <label htmlFor="project-client_name">Client name</label>
+      <label htmlFor="project-client_id">Client ID</label>
       <input
         type="text"
-        id="project-client_name"
+        id="project-client_id"
         // eslint-disable-next-line no-nested-ternary
-        value={!project ? null : editUser ? null : project.client_name}
+        value={!project ? null : editUser ? null : project.client_id}
         disabled={!editUser}
         className={
           !editUser
             ? "border border-solid border-1 mb-2 p-2 w-[90%] text-slate-500"
             : "border border-solid border-1 mb-2 p-2 w-[90%] text-black"
         }
-        ref={clientName}
+        ref={clientId}
       />
 
-      {
-        // eslint-disable-next-line no-nested-ternary
-        // !project ? (
-        //   setEditedUser(true) && (
-        //     <input
-        //       type="submit"
-        //       value="Valider les informations"
-        //       className="border-solid border-2 border-green-900 text-green-900 p-2 m-2 w-[90%] rounded-lg"
-        //     />
-        //   )
-        // ) :
-        editUser === true ? (
-          <input
-            type="submit"
-            value="Valider les informations"
-            className="border-solid border-2 border-green-900 text-green-900 p-2 m-2 w-[90%] rounded-lg"
-          />
-        ) : (
-          <button
-            type="button"
-            className="border-solid border-2 border-[#5f2525] text-[#5f2525] p-2 m-2 w-[90%] rounded-lg"
-            onClick={handleEdit}
-          >
-            Modifier les informations
-          </button>
-        )
-      }
+      {editUser === true ? (
+        <input
+          type="submit"
+          value="Valider les informations"
+          className="border-solid border-2 border-green-900 text-green-900 p-2 m-2 w-[90%] rounded-lg"
+        />
+      ) : (
+        <button
+          type="button"
+          className="border-solid border-2 border-[#5f2525] text-[#5f2525] p-2 m-2 w-[90%] rounded-lg"
+          onClick={handleEdit}
+        >
+          Modifier les informations
+        </button>
+      )}
     </form>
   );
 }
@@ -221,6 +235,6 @@ ProjectForm.propTypes = {
     img_url: PropTypes.string.isRequired,
     linkedin_post_link: PropTypes.string.isRequired,
     github_repo_link: PropTypes.string.isRequired,
-    client_name: PropTypes.string.isRequired,
+    client_id: PropTypes.number.isRequired,
   }).isRequired,
 };
