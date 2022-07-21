@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 
 export default function ProjectModal({
   id,
@@ -67,3 +68,17 @@ export default function ProjectModal({
     </div>
   );
 }
+
+ProjectModal.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  startDate: PropTypes.string.isRequired,
+  endDate: PropTypes.string.isRequired,
+  imgUrl: PropTypes.string.isRequired,
+  developerTeam: PropTypes.string.isRequired,
+  linkedinPostLink: PropTypes.string.isRequired,
+  githubRepoLink: PropTypes.string.isRequired,
+  clientName: PropTypes.string.isRequired,
+  close: PropTypes.func.isRequired,
+};
