@@ -74,8 +74,8 @@ CREATE TABLE `project` (
   `id` int(11) PRIMARY KEY NOT NULL,
   `name` varchar(80) NOT NULL,
   `description` varchar(280) NOT NULL,
-  `start_date` date NOT NULL,
-  `end_date` date NOT NULL,
+  `start_date` varchar(80) NOT NULL,
+  `end_date` varchar(80) NOT NULL,
   `img_url` varchar(255) NOT NULL,
   `developer_team` varchar(80) NOT NULL,
   `linkedin_post_link` varchar(255),
@@ -91,8 +91,8 @@ CREATE TABLE `project` (
 --
 
 INSERT INTO `project` (`id`, `name`, `description`, `start_date`, `end_date`, `img_url`, `developer_team`, `linkedin_post_link`, `github_repo_link`, `client_id`) VALUES
-(1, 'Project 1', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus distinctio odit ipsa cum rerum a sapiente obcaecati itaque natus magnam?', '2022-02-28', '2022-07-29', 'https://loremflickr.com/320/240', 'Developer team 1', 'https://www.linkedin.com/in/simon-duc-858481213/', 'https://github.com/Simon-Duc/1st_portfolio_project', 1),
-(2, 'Project 2', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus distinctio odit ipsa cum rerum a sapiente obcaecati itaque natus magnam?', '2022-05-01', '2022-06-15', 'https://loremflickr.com/320/240', 'Developer team 2', 'https://www.linkedin.com/in/simon-duc-858481213/', 'https://github.com/Simon-Duc/1st_portfolio_project', 2);
+(1, 'Project 1', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus distinctio odit ipsa cum rerum a sapiente obcaecati itaque natus magnam?', '28-02-2022', '29-07-2022', 'https://loremflickr.com/320/240', 'Developer team 1', 'https://www.linkedin.com/in/simon-duc-858481213/', 'https://github.com/Simon-Duc/1st_portfolio_project', 1),
+(2, 'Project 2', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus distinctio odit ipsa cum rerum a sapiente obcaecati itaque natus magnam?', '01-05-2022', '15-06-2022', 'https://loremflickr.com/320/240', 'Developer team 2', 'https://www.linkedin.com/in/simon-duc-858481213/', 'https://github.com/Simon-Duc/1st_portfolio_project', 2);
 
 --
 -- AUTO_INCREMENT pour les tables exportées
