@@ -1,6 +1,6 @@
 export default function Welcome() {
   return (
-    <div className="border border-solid border-t-1">
+    <div id="welcome" className="border border-solid border-t-1">
       <section className="h-[90vh] flex justify-center items-center">
         <div className="flex flex-col items-center">
           <h1 className="text-3xl">🏁</h1>

@@ -3,7 +3,7 @@ export default function Biography() {
     <div>
       <section
         id="bio"
-        className="h-[100vh] flex flex-col justify-center items-center"
+        className="h-[95vh] flex flex-col justify-center items-center"
       >
         <h2 className="m-4">Bio</h2>
         <div className="flex flex-col items-center border border-solid border-1 w-[90%] p-4">
@@ -34,6 +34,11 @@ export default function Biography() {
             inventore sint ex dolorum aliquid?
           </p>
         </div>
+      </section>
+      <section className="h-[5vh] flex flex-col justify-center items-center">
+        <a href="#projects">
+          <img src="../src/assets/chevron.png" alt="Chevron" className="w-6" />
+        </a>
       </section>
     </div>
   );
