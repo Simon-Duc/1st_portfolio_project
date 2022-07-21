@@ -92,7 +92,8 @@ CREATE TABLE `project` (
 
 INSERT INTO `project` (`id`, `name`, `description`, `start_date`, `end_date`, `img_url`, `developer_team`, `linkedin_post_link`, `github_repo_link`, `client_id`) VALUES
 (1, 'Project 1', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus distinctio odit ipsa cum rerum a sapiente obcaecati itaque natus magnam?', '28-02-2022', '29-07-2022', 'https://loremflickr.com/320/240', 'Developer team 1', 'https://www.linkedin.com/in/simon-duc-858481213/', 'https://github.com/Simon-Duc/1st_portfolio_project', 1),
-(2, 'Project 2', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus distinctio odit ipsa cum rerum a sapiente obcaecati itaque natus magnam?', '01-05-2022', '15-06-2022', 'https://loremflickr.com/320/240', 'Developer team 2', 'https://www.linkedin.com/in/simon-duc-858481213/', 'https://github.com/Simon-Duc/1st_portfolio_project', 2);
+(2, 'Project 2', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus distinctio odit ipsa cum rerum a sapiente obcaecati itaque natus magnam?', '01-05-2022', '15-06-2022', 'https://loremflickr.com/320/240', 'Developer team 2', 'https://www.linkedin.com/in/simon-duc-858481213/', 'https://github.com/Simon-Duc/1st_portfolio_project', 2),
+(3, 'Project 3', 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus distinctio odit ipsa cum rerum a sapiente obcaecati itaque natus magnam?', '01-05-2022', '15-06-2022', 'https://loremflickr.com/320/240', 'Developer team 2', 'https://www.linkedin.com/in/simon-duc-858481213/', 'https://github.com/Simon-Duc/1st_portfolio_project', 1);
 
 --
 -- AUTO_INCREMENT pour les tables exportées
@@ -102,7 +103,7 @@ INSERT INTO `project` (`id`, `name`, `description`, `start_date`, `end_date`, `i
 -- AUTO_INCREMENT pour la table `project`
 --
 ALTER TABLE `project`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
@@ -126,8 +127,11 @@ CREATE TABLE `tool` (
 --
 
 INSERT INTO `tool` (`id`, `name`, `img_url`, `category`) VALUES
-(1, 'React', 'https://loremflickr.com/320/240', 'framework'),
-(2, 'HTML', 'https://loremflickr.com/320/240', 'markup language');
+(1, 'HTML', 'https://loremflickr.com/320/240', 'markup language'),
+(2, 'CSS', 'https://loremflickr.com/320/240', 'style sheet language'),
+(3, 'JavaScript', 'https://loremflickr.com/320/240', 'programming language'),
+(4, 'React', 'https://loremflickr.com/320/240', 'framework'),
+(5, 'MySQL', 'https://loremflickr.com/320/240', 'relational database management system');
 
 
 --
@@ -148,7 +152,7 @@ ALTER TABLE `tool`
 -- AUTO_INCREMENT pour la table `tool`
 --
 ALTER TABLE `tool`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
@@ -163,7 +167,8 @@ CREATE TABLE `project_tool` (
   `project_id` int(11) UNSIGNED NOT NULL,
   CONSTRAINT fk_project_tool_project
         FOREIGN KEY (project_id)
-        REFERENCES project(id),
+        REFERENCES project(id)
+        ON DELETE CASCADE,
   `tool_id` int(11) UNSIGNED NOT NULL,
   CONSTRAINT fk_project_tool_tool
         FOREIGN KEY (tool_id)
@@ -176,6 +181,15 @@ CREATE TABLE `project_tool` (
 
 INSERT INTO `project_tool` (`project_id`,`tool_id`) VALUES
 (1, 1),
+(1, 2),
+(1, 3),
 (2, 1),
-(2, 2);
+(2, 2),
+(2, 4),
+(2, 1) ,
+(3, 1),
+(3, 2),
+(3, 3),
+(3, 4),
+(3, 5);
 

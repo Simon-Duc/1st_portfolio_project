@@ -5,7 +5,7 @@ export default function Contact() {
     <div id="contact">
       <Navbar />
       <section className="h-[90vh] flex flex-col justify-center items-center">
-        <h2 className="text-xl m-4">Contact</h2>
+        <h2 className="text-2xl m-4">Contact</h2>
         <form className="flex flex-col border border-solid border-1 p-4 min-w-[90%]">
           <label htmlFor="name" className="font-bold">
             Name
