@@ -3,7 +3,7 @@ import { useState, useRef } from "react";
 import axios from "axios";
 
 export default function ProjectForm({ project }) {
-  const [editUser, setEditedUser] = useState(false);
+  const [editUser, setEditUser] = useState(false);
 
   const name = useRef();
   const description = useRef();
@@ -57,9 +57,11 @@ export default function ProjectForm({ project }) {
       .then((response) => response);
   };
 
+  const deleteProject = () => {};
+
   const handleSave = (e) => {
     e.preventDefault();
-    setEditedUser(false);
+    setEditUser(false);
     if (project) {
       putProject();
     } else {
@@ -69,7 +71,12 @@ export default function ProjectForm({ project }) {
 
   const handleEdit = (e) => {
     e.preventDefault();
-    setEditedUser(true);
+    setEditUser(true);
+  };
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    deleteProject();
   };
 
   return (
@@ -206,11 +213,20 @@ export default function ProjectForm({ project }) {
       />
 
       {editUser === true ? (
-        <input
-          type="submit"
-          value="Valider les informations"
-          className="border-solid border-2 border-green-900 text-green-900 p-2 m-2 w-[90%] rounded-lg"
-        />
+        <section className="flex justify-center text-center w-full">
+          <input
+            type="submit"
+            value="Valider"
+            className="text-center border-solid border-2 border-green-900 text-green-900 p-2 m-2 min-w-[42%] rounded-lg"
+          />
+          <button
+            type="button"
+            className="border-solid border-2 border-[#5f2525] text-[#5f2525] p-2 m-2 min-w-[42%] rounded-lg"
+            onClick={handleDelete}
+          >
+            Supprimer
+          </button>
+        </section>
       ) : (
         <button
           type="button"
