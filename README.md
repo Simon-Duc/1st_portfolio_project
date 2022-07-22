@@ -1,9 +1,55 @@
-## Concept
+# Wild Code School (Reims) - Checkpoint 4 - Portfolio
 
-This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
-It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying as simple as possible to use.
+## Dates
+
+The 20th and 21st July 2022
+
+## Concept :
+
+My first portfolio project.
+
+Three main features :
+- A refined app with a fluent navigation to go to the 4 sections : welcome, biography, projects and contact.
+- An admin panel to create, read, update and delete the projects displayed in the portfolio.
+- A contact form
+
+## Team :
+
+Developer :
+- [Simon Duc](https://github.com/Simon-Duc "Simon Duc")
+
+Instructors :
+- Romain Guillemot
+- Robin Jonval
+
+## Goals :
+
+- A database model was designed and updated throughout the project
+- The design of the application is consistent and respects the partner's brand guidelines
+- The API respects the REST architecture
+- The application is created using a front-end framework
+- The code is well structured and DRY
+- The application is functional and has no major errors
+- The code is available on Github
+
+## Wireframes :
+
+./assets/wireframes.png
+
+## Product backlog :
+
+./assets/product_backlog.png
+
+## MCD :
+
+./assets/mcd.png
 
 ## Setup & Use
+
+### Support
+
+This template is meant to serve as a foundation for every project following the React-Express-MySQL stack, as learned in Wild Code School.
+It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying as simple as possible to use.
 
 ### Project Initialization
 
@@ -15,14 +61,11 @@ It's pre-configured with a set of tools which'll help students produce industry-
 ### Available Commands
 
 - `setup` : Initialization of frontend and backend, as well as all toolings
-- `migrate` : Run the database migration script
 - `dev` : Starts both servers (frontend + backend) in one terminal
 - `dev-front` : Starts the React frontend server
 - `dev-back` : Starts the Express backend server
 - `lint` : Runs validation tools, and refuses unclean code (will be executed on every _commit_)
 - `fix` : Fixes linter errors (run it if `lint` growls on your code !)
-
-## FAQ
 
 ### Tools
 

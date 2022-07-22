@@ -1,8 +1,54 @@
-## Concept
+# Wild Code School (Reims) - Checkpoint 4 - Portfolio
 
-Ce template est conçu pour servir de base à tous les projets (P2/P3) suivants la stack React-Node-MySQL telle qu'enseignée à la Wild Code School. Il est préconfiguré avec un ensemble d'outils qui aideront les élèves à produire un code correspondant mieux aux standards du monde du travail et plus facile à maintenir, tout en restant simple à utiliser.
+## Dates
+
+Les 20 et 21 juillet 2022
+
+## Concept :
+
+Mon premier projet de portfolio.
+
+Les trois fonctionnalités principales :
+- Une application épurée avec une navigation fluide vers 4 sections : welcome, biography, projects et contact.
+- Un panel d'admin pour obtenir, créer, modifier et supprimer les projets présentés dans le portfolio.
+- Un formulaire de contact.
+
+## Equipe :
+
+Développeur :
+- [Simon Duc](https://github.com/Simon-Duc "Simon Duc")
+
+Formateurs :
+- Romain Guillemot
+- Robin Jonval
+
+## Objectifs :
+
+- Un modèle de base de données créé et mis à jour tout le long du projet
+- Un design d'application cohérent, qui respecte les indications du partenaire et la charte graphique de son entreprise
+- L'API respecte l'architecture REST
+- L'application est créée grâce à un framework front-end
+- L'application est fonctionnelle et ne contient pas d'erreur majeure
+- Le code est DRY et bien structuré
+- Le code est disponible sur GitHub
+
+## Wireframes :
+
+./assets/wireframes.png
+
+## Product backlog :
+
+./assets/product_backlog.png
+
+## MCD :
+
+./assets/mcd.png
 
 ## Installation & Utilisation
+
+### Template
+
+Ce template est conçu pour servir de base à tous les projets (P2/P3) suivants la stack React-Node-MySQL telle qu'enseignée à la Wild Code School. Il est préconfiguré avec un ensemble d'outils qui aideront les élèves à produire un code correspondant mieux aux standards du monde du travail et plus facile à maintenir, tout en restant simple à utiliser.
 
 ### Pour commencer un projet
 
@@ -19,8 +65,6 @@ Ce template est conçu pour servir de base à tous les projets (P2/P3) suivants 
 - `dev-back` : Démarrage d'un serveur Express pour le backend
 - `lint` : Exécute des outils de validation de code (sera exécutée automatiquement à chaque _commit_)
 - `fix` : Fixe les erreurs de formatage (à lancer si `lint` ne passe pas)
-
-## Pour plus d'informations
 
 ### Listing des outils utilisés
 
