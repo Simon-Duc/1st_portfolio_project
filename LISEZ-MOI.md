@@ -32,6 +32,18 @@ Formateurs :
 - Le code est DRY et bien structuré
 - Le code est disponible sur GitHub
 
+## Wireframes :
+
+./assets/wireframes.png
+
+## Product backlog :
+
+./assets/product_backlog.png
+
+## MCD :
+
+./assets/mcd.png
+
 ## Installation & Utilisation
 
 ### Template
