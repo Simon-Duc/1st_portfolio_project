@@ -25,7 +25,7 @@ export default function Projects() {
   return (
     <div id="projects">
       <Navbar />
-      <section className="flex flex-col justify-center items-center">
+      <section className="flex flex-col justify-center items-center h-[90vh]">
         <h2 className="text-2xl m-4">Projects</h2>
         {projects &&
           projects.map((project) => (
