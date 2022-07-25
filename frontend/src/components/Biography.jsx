@@ -39,9 +39,9 @@ export default function Biography() {
           </p>
           <h3 className="my-2 text-xl">Education / jobs</h3>
           <ul className="list-disc mx-4">
-            <li>Management curse, MBA ESG, 2014</li>
-            <li>Python online curse, University of Toronto, 2021</li>
-            <li>Web developer curse, Wild Code School, 2022</li>
+            <li>Management course, MBA ESG, 2014</li>
+            <li>Python online course, University of Toronto, 2021</li>
+            <li>Web developer course, Wild Code School, 2022</li>
           </ul>
           <h3 className="my-2 text-xl">Tools</h3>
           <ul className="flex flex-wrap p-2">
