@@ -127,11 +127,16 @@ CREATE TABLE `tool` (
 --
 
 INSERT INTO `tool` (`id`, `name`, `img_url`, `category`) VALUES
-(1, 'HTML', 'https://loremflickr.com/320/240', 'markup language'),
-(2, 'CSS', 'https://loremflickr.com/320/240', 'style sheet language'),
-(3, 'JavaScript', 'https://loremflickr.com/320/240', 'programming language'),
-(4, 'React', 'https://loremflickr.com/320/240', 'framework'),
-(5, 'MySQL', 'https://loremflickr.com/320/240', 'relational database management system');
+(1, 'HTML', 'https://github.com/devicons/devicon/blob/master/icons/html5/html5-original.svg', 'markup language'),
+(2, 'CSS', 'https://github.com/devicons/devicon/blob/master/icons/css3/css3-original.svg', 'style sheet language'),
+(3, 'Tailwind', 'https://github.com/devicons/devicon/blob/master/icons/tailwindcss/tailwindcss-plain.svg', 'style sheet language'),
+(4, 'JavaScript', 'https://github.com/devicons/devicon/blob/master/icons/javascript/javascript-original.svg', 'programming language'),
+(5, 'React.js', 'https://github.com/devicons/devicon/blob/master/icons/react/react-original.svg', 'library'),
+(6, 'Node.js', 'https://github.com/devicons/devicon/blob/master/icons/nodejs/nodejs-original.svg', 'framework'),
+(7, 'Express.js', 'https://github.com/devicons/devicon/blob/master/icons/express/express-original.svg', 'framework'),
+(8, 'Python', 'https://github.com/devicons/devicon/blob/master/icons/python/python-original.svg', 'programming language'),
+(9, 'MySQL', 'https://github.com/devicons/devicon/blob/master/icons/mysql/mysql-original.svg', 'relational database management system'),
+(10, 'Git', 'https://github.com/devicons/devicon/blob/master/icons/git/git-original.svg', 'version control software');
 
 
 --
