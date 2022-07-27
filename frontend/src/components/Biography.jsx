@@ -32,16 +32,27 @@ export default function Biography() {
           />
           <h3 className="my-2 text-xl">A few words about me</h3>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            laudantium iste culpa sunt enim ad quia consequatur mollitia dolore,
-            minus perferendis, assumenda aperiam, praesentium asperiores
-            inventore sint ex dolorum aliquid?
+            Currently at the Wild Code School in a JavaScript-React-Node-Express
+            course, I'm looking for an internship in Paris, as a web developer,
+            starting at the end of my training course in September 2022.
           </p>
           <h3 className="my-2 text-xl">Education / jobs</h3>
           <ul className="list-disc mx-4">
-            <li>Management course, MBA ESG, 2014</li>
-            <li>Python online course, University of Toronto, 2021</li>
-            <li>Web developer course, Wild Code School, 2022</li>
+            <li>
+              Web developer course, Wild Code School,
+              <br />
+              Reims, 2022
+            </li>
+            <li>
+              Python developer course, Coursera.org,
+              <br />
+              Online, 2021
+            </li>
+            <li>
+              Management course, MBA ESG,
+              <br />
+              Paris, 2014
+            </li>
           </ul>
           <h3 className="my-2 text-xl">Tools</h3>
           <ul className="flex flex-wrap p-2">
